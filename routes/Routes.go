@@ -7,10 +7,15 @@ import (
 
 	"2hf/controllers"
 	"2hf/middlewares"
+	"net/http"
 
 	swaggerFiles "github.com/swaggo/files"     // swagger embed files
 	ginSwagger "github.com/swaggo/gin-swagger" // gin-swagger middleware
 )
+
+func HomepageHandler(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{"message": "Welcome to Hunting For Halal Food"})
+}
 
 func SetupRouter(db *gorm.DB) *gin.Engine {
 	r := gin.Default()
@@ -30,6 +35,8 @@ func SetupRouter(db *gorm.DB) *gin.Engine {
 	r.Use(func(c *gin.Context) {
 		c.Set("db", db)
 	})
+
+	r.GET("/", HomepageHandler)
 
 	r.POST("/register", controllers.Register)
 	r.POST("/login", controllers.Login)
