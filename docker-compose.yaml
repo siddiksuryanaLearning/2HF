@@ -21,11 +21,11 @@ services:
       appDb:
         condition: service_healthy
     environment:
-      HTTP_PORT: 8000
+      HTTP_PORT: 8080
       CONNECTION_STRING: root:password@tcp(db2hf.cbw2vfbfmfv7.us-east-1.rds.amazonaws.com:3306)/db2hf?charset=utf8&parseTime=True&loc=Local
       STORAGE: db
     ports:
-      - 8000:8000
+      - 8080:8080
 
   adminer:
     image: adminer
