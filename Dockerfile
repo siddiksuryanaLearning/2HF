@@ -3,15 +3,15 @@ FROM golang:1.18
 ## We create an /app directory within our
 ## image that will hold our application source
 ## files
-RUN mkdir /app
+RUN mkdir /2hf
 
 ## We specify that we now wish to execute 
 ## any further commands inside our /app
 ## directory
-WORKDIR /app
+WORKDIR /2hf
 
-COPY go.mod /app
-COPY go.sum /app
+COPY go.mod /2hf
+COPY go.sum /2hf
 RUN go mod download
 
 ## We copy everything in the root directory
@@ -24,5 +24,5 @@ RUN go build -o main .
 
 ## Our start command which kicks off
 ## our newly created binary executable
-CMD ["/app/main"]
+CMD ["/2hf/main"]
 
