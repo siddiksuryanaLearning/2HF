@@ -13,9 +13,6 @@ import (
 
 func main() {
 
-	// for load godotenv
-	// for env
-
 	//programmatically set swagger info
 	docs.SwaggerInfo.Title = "Swagger Example API"
 	docs.SwaggerInfo.Description = "This is a sample server Shop."
