@@ -16,7 +16,7 @@ RUN go mod download
 
 ## We copy everything in the root directory
 ## into our /app directory
-ADD . /app
+ADD . /2hf
 
 ## we run go build to compile the binary
 ## executable of our Go program
