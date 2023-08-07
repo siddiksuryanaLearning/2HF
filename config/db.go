@@ -38,11 +38,11 @@ func ConnectDataBase() *gorm.DB {
 	} else {
 
 		username := "root"
-		password := ""
+		password := "password"
 		// host := "tcp(192.168.217.88:3306)"
 		// host := "tcp(localhost:3306)"
-		host := "tcp(44.201.187.174:3306)"
-		database := "db_2hf"
+		host := "tcp(db2hf.cbw2vfbfmfv7.us-east-1.rds.amazonaws.com:3306)"
+		database := "db2hf"
 
 		dsn := fmt.Sprintf("%v:%v@%v/%v?charset=utf8mb4&parseTime=True&loc=Local", username, password, host, database)
 		// dsn := "root:root@tcp(192.168.217.88:3306)/mysql?charset=utf8mb4&parseTime=True&loc=Local"
