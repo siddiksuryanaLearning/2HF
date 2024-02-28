@@ -11,10 +11,10 @@ services:
       # - './data:/bitnami/mysql/data'
       - "./initdb:/docker-entrypoint-initdb.d"
     healthcheck:
-      test: ["CMD", "mysql", "-u", "root", "-password", "-e", "show schemas"]
+      test: ["CMD", "mysql", "-u", "root", "-ppassword", "-e", "show schemas"]
       interval: 10s
 
-  2hf:
+  2HF:
     build: .
     restart: always
     depends_on:
