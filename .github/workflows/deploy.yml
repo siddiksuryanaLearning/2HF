@@ -13,7 +13,7 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            cd 2hf
+            cd 2HF
             git pull origin mvc
             go test -v ./..
             docker-compose down && docker-compose up --build -d
