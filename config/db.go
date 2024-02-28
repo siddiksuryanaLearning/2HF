@@ -40,7 +40,7 @@ func ConnectDataBase() *gorm.DB {
 		username := "root"
 		password := "password"
 		// host := "tcp(192.168.217.88:3306)"
-		host := "tcp(18.117.178.240:3306)"
+		host := "tcp(appDb:3306)"
 		// host := "tcp(jekom.cj6kmsg4c21r.us-east-2.rds.amazonaws.com:3306)"
 		database := "db2hf"
 
