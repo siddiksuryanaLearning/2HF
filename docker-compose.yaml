@@ -14,7 +14,7 @@ services:
       test: ["CMD", "mysql", "-u", "root", "-ppassword", "-e", "show schemas"]
       interval: 10s
 
-  2HF:
+  2hf:
     build: .
     restart: always
     depends_on:
