@@ -1,18 +1,18 @@
 services:
-  # appDb:
-  #   image: bitnami/mysql
-  #   restart: always
-  #   environment:
-  #     MYSQL_ROOT_PASSWORD: password
-  #     MYSQL_DATABASE: db2hf
-  #   ports:
-  #     - 3306:3306
-  #   volumes:
-  #     # - './data:/bitnami/mysql/data'
-  #     - "./initdb:/docker-entrypoint-initdb.d"
-  #   healthcheck:
-  #     test: ["CMD", "mysql", "-u", "root", "-ppassword", "-e", "show schemas"]
-  #     interval: 10s
+  appDb:
+    image: bitnami/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: db2hf
+    ports:
+      - 3306:3306
+    volumes:
+      # - './data:/bitnami/mysql/data'
+      - "./initdb:/docker-entrypoint-initdb.d"
+    healthcheck:
+      test: ["CMD", "mysql", "-u", "root", "-ppassword", "-e", "show schemas"]
+      interval: 10s
 
   2hf:
     build: .
@@ -22,7 +22,7 @@ services:
         condition: service_healthy
     environment:
       HTTP_PORT: 8080
-      CONNECTION_STRING: root:password@tcp(jekom.cj6kmsg4c21r.us-east-2.rds.amazonaws.com:3306)/db2hf?charset=utf8&parseTime=True&loc=Local
+      CONNECTION_STRING: root:password@tcp(appDb:3306)/db2hf?charset=utf8&parseTime=True&loc=Local
       STORAGE: db
     ports:
       - 8080:8080
