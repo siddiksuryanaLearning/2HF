@@ -14,7 +14,7 @@ import (
 )
 
 func HomepageHandler(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{"message": "Welcome to Hunting For Halal Food"})
+	c.JSON(http.StatusOK, gin.H{"message": "Welcomeback to Hunting For Halal Food"})
 }
 
 func SetupRouter(db *gorm.DB) *gin.Engine {
