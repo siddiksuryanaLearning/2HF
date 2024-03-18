@@ -17,7 +17,7 @@ func main() {
 	docs.SwaggerInfo.Title = "Swagger Example API"
 	docs.SwaggerInfo.Description = "This is a sample server Halal Food."
 	docs.SwaggerInfo.Version = "1.0"
-	docs.SwaggerInfo.Host = utils.Getenv("SWAGGER_HOST", "18.117.178.240:8080")
+	docs.SwaggerInfo.Host = utils.Getenv("SWAGGER_HOST", "3.135.184.3:8080")
 	docs.SwaggerInfo.Schemes = []string{"http", "https"}
 
 	environment := utils.Getenv("ENVIRONMENT", "development")
