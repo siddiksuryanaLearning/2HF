@@ -4,7 +4,7 @@ Hunting For Halal Food
 
 //docker
 sudo apt-get update
-sudo apt-get install docker.io
+sudo apt-get install docker.io (optional)
 sudo apt install docker-compose
 sudo chmod 777 /var/run/docker.sock
 sudo apt-get install python3-pip
